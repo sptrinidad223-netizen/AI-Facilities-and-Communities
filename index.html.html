@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Facilities & Communities</title>
+<style>
+:root{
+  --navy:#071a35;
+  --blue:#0b5ed7;
+  --cyan:#18c7d9;
+  --light:#f4f8fc;
+  --text:#1d2a3a;
+  --muted:#617083;
+  --white:#fff;
+  --shadow:0 12px 35px rgba(7,26,53,.10);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--light);line-height:1.6}
+nav{position:fixed;top:0;width:100%;z-index:10;background:rgba(7,26,53,.96);display:flex;justify-content:space-between;align-items:center;padding:16px 7%;color:white}
+.logo{font-size:1.25rem;font-weight:700;letter-spacing:.5px}
+.logo span{color:var(--cyan)}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+nav a{color:#fff;text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--cyan)}
+.hero{min-height:92vh;padding:150px 7% 90px;display:flex;align-items:center;background:linear-gradient(110deg,rgba(7,26,53,.96),rgba(7,26,53,.72)),url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85') center/cover;color:white}
+.hero-content{max-width:760px}
+.eyebrow{color:var(--cyan);font-weight:bold;text-transform:uppercase;letter-spacing:2px}
+h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.08;margin:18px 0}
+.hero p{font-size:1.15rem;max-width:650px;color:#dce8f5}
+.btn{display:inline-block;margin-top:22px;background:var(--cyan);color:var(--navy);font-weight:bold;padding:13px 23px;border-radius:30px;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:#fff}
+section{padding:85px 7%}
+.section-title{text-align:center;max-width:760px;margin:0 auto 45px}
+.section-title h2{font-size:2.3rem;color:var(--navy);margin:0 0 12px}
+.section-title p{color:var(--muted)}
+.about{background:white}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:35px}
+.stat{background:var(--light);padding:25px;border-left:4px solid var(--cyan);border-radius:10px}
+.stat strong{display:block;font-size:1.8rem;color:var(--blue)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:white;border-radius:16px;padding:27px;box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-6px)}
+.icon{font-size:2rem}
+.card h3{color:var(--navy);margin:13px 0 8px}
+.card p{color:var(--muted);font-size:.95rem}
+.challenges{background:var(--navy);color:white}
+.challenges .section-title h2{color:white}
+.challenges .section-title p{color:#c7d5e5}
+.challenge-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.challenge{padding:25px;border:1px solid rgba(255,255,255,.18);border-radius:14px;background:rgba(255,255,255,.06)}
+.challenge h3{color:var(--cyan);margin-top:0}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.compare-box{padding:30px;border-radius:16px;background:white;box-shadow:var(--shadow)}
+.compare-box h3{color:var(--navy)}
+.compare-box ul{padding-left:20px}
+.solutions{background:white}
+.solution-list{max-width:850px;margin:auto}
+.solution-item{display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-bottom:1px solid #e1e8f0}
+.solution-number{background:var(--blue);color:white;width:35px;height:35px;display:grid;place-items:center;border-radius:50%;font-weight:bold;flex:none}
+.quote{background:linear-gradient(120deg,#0b5ed7,#071a35);color:white;text-align:center}
+.quote blockquote{max-width:850px;margin:auto;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:600;line-height:1.35}
+.quote cite{display:block;margin-top:20px;color:#b9eaf0;font-style:normal}
+.sources{background:#eef4f9}
+.source-list{max-width:950px;margin:auto;background:white;padding:30px 38px;border-radius:16px;box-shadow:var(--shadow)}
+.source-list li{margin-bottom:16px;color:var(--muted)}
+.source-list a{color:var(--blue);font-weight:bold}
+.source-note{margin-top:22px;padding:15px;background:#f4f8fc;border-left:4px solid var(--cyan);color:var(--muted);font-size:.93rem}
+footer{background:#041126;color:#b9c7d8;text-align:center;padding:30px 7%;font-size:.9rem}
+footer a{color:var(--cyan);text-decoration:none}
+.menu{display:none;background:none;border:0;color:white;font-size:1.5rem}
+@media(max-width:900px){
+ .cards{grid-template-columns:repeat(2,1fr)}
+ nav ul{gap:12px}
+}
+@media(max-width:650px){
+ nav{padding:14px 5%}
+ .menu{display:block}
+ nav ul{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);padding:20px;flex-direction:column}
+ nav ul.show{display:flex}
+ section{padding:65px 5%}
+ .hero{padding:130px 5% 70px}
+ .stats,.cards,.challenge-grid,.compare{grid-template-columns:1fr}
+ h1{font-size:2.7rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">AI <span>Facilities</span> & Communities</div>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+  <ul id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#positive">Benefits</a></li>
+    <li><a href="#challenges">Challenges</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Technology • People • Environment</div>
+    <h1>The Future of AI Is Also the Future of Our Communities.</h1>
+    <p>Exploring how artificial intelligence facilities influence neighboring communities through economic growth, infrastructure development, environmental pressure, and social change.</p>
+    <a class="btn" href="#about">Explore the Impact ↓</a>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="section-title">
+    <h2>What Are AI Facilities?</h2>
+    <p>AI facilities are specialized spaces that support artificial intelligence through powerful computing systems, data storage, research laboratories, cooling infrastructure, and high-capacity energy and telecommunications networks.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>Computing</strong>High-performance systems process large volumes of data.</div>
+    <div class="stat"><strong>Infrastructure</strong>Facilities require reliable power, cooling, connectivity, and transportation.</div>
+    <div class="stat"><strong>Community</strong>Their effects extend beyond the facility into nearby neighborhoods.</div>
+  </div>
+</section>
+
+<section id="positive">
+  <div class="section-title">
+    <h2>Positive Impacts</h2>
+    <p>When planned responsibly, AI facilities can become catalysts for local development and innovation.</p>
+  </div>
+  <div class="cards">
+    <article class="card"><div class="icon">💼</div><h3>Economic Opportunities</h3><p>AI facilities can attract investment, create direct and indirect employment, and support nearby businesses such as food services, maintenance, logistics, and construction.</p></article>
+    <article class="card"><div class="icon">🏗️</div><h3>Infrastructure Development</h3><p>Their presence may encourage improvements in roads, utilities, telecommunications, and other public infrastructure.</p></article>
+    <article class="card"><div class="icon">🎓</div><h3>Education & Skills</h3><p>Partnerships with schools and universities can provide technical training, internships, research opportunities, and new career pathways.</p></article>
+    <article class="card"><div class="icon">🌱</div><h3>Innovation & Growth</h3><p>Technology-oriented development can attract new enterprises and encourage communities to participate in the digital economy.</p></article>
+  </div>
+</section>
+
+<section id="challenges" class="challenges">
+  <div class="section-title">
+    <h2>Challenges for Neighboring Communities</h2>
+    <p>AI infrastructure can also create environmental, social, and operational pressures that need careful management.</p>
+  </div>
+  <div class="challenge-grid">
+    <article class="challenge"><h3>⚡ Energy Consumption</h3><p>Large computing facilities require substantial electricity, which can increase pressure on local power systems and energy resources.</p></article>
+    <article class="challenge"><h3>💧 Water Usage</h3><p>Some cooling technologies consume water, creating potential competition with residential, agricultural, and ecological needs.</p></article>
+    <article class="challenge"><h3>🔊 Noise & Environment</h3><p>Construction, cooling equipment, generators, and increased vehicle activity may affect nearby residents and ecosystems.</p></article>
+    <article class="challenge"><h3>🏘️ Land Use & Housing</h3><p>Large developments may change land-use patterns, influence property values, and increase pressure on housing and local services.</p></article>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Balancing Opportunity and Responsibility</h2>
+    <p>The impact of AI facilities is not automatically positive or negative. Outcomes depend on planning, regulation, design, and community participation.</p>
+  </div>
+  <div class="compare">
+    <div class="compare-box"><h3>Potential Benefits</h3><ul><li>Job creation and investment</li><li>Improved infrastructure</li><li>Training and education</li><li>Local business growth</li><li>Technology and innovation</li></ul></div>
+    <div class="compare-box"><h3>Potential Risks</h3><ul><li>High energy demand</li><li>Water-resource concerns</li><li>Noise and traffic</li><li>Environmental impacts</li><li>Land-use and housing pressure</li></ul></div>
+  </div>
+</section>
+
+<section id="solutions" class="solutions">
+  <div class="section-title">
+    <h2>Building a More Sustainable Future</h2>
+    <p>Responsible development should place community well-being alongside technological progress.</p>
+  </div>
+  <div class="solution-list">
+    <div class="solution-item"><div class="solution-number">1</div><div><strong>Improve energy efficiency.</strong><br>Use efficient computing systems, cooling technologies, and facility operations.</div></div>
+    <div class="solution-item"><div class="solution-number">2</div><div><strong>Explore renewable energy.</strong><br>Integrate clean energy sources and transparent energy planning.</div></div>
+    <div class="solution-item"><div class="solution-number">3</div><div><strong>Manage water responsibly.</strong><br>Adopt water-efficient cooling systems and monitor local water impacts.</div></div>
+    <div class="solution-item"><div class="solution-number">4</div><div><strong>Engage the community.</strong><br>Consult residents, local government, schools, and businesses before and during development.</div></div>
+    <div class="solution-item"><div class="solution-number">5</div><div><strong>Create shared value.</strong><br>Provide local employment, skills training, public benefits, and transparent reporting.</div></div>
+  </div>
+</section>
+
+<section class="quote">
+  <blockquote>“AI development should not only be measured by technological progress, but also by how it improves the lives of the people living around it.”</blockquote>
+  <cite>— Community-centered technology principle</cite>
+</section>
+
+<section id="sources" class="sources">
+  <div class="section-title">
+    <h2>References & Source Credits</h2>
+    <p>This website uses the following references for factual claims, recommendations, image use, and quotations. Access dates should be updated if the website is submitted at a later date.</p>
+  </div>
+  <div class="source-list">
+    <ol>
+      <li><strong>International Energy Agency (IEA).</strong> <em>Energy and AI</em> (2025). Used for information about data centers, electricity demand, AI infrastructure, and emissions. 
+        <a href="https://www.iea.org/reports/energy-and-ai" target="_blank" rel="noopener">View source</a>.
+      </li>
+      <li><strong>International Energy Agency (IEA).</strong> “Energy demand from AI.” Used for the explanation of data center components and projected electricity demand.
+        <a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noopener">View source</a>.
+      </li>
+      <li><strong>World Resources Institute (WRI).</strong> “From Energy Use to Air Quality, the Many Ways Data Centers Affect US Communities” (2026). Used for discussion of energy, water, air quality, land use, and community impacts.
+        <a href="https://www.wri.org/insights/us-data-center-growth-impacts" target="_blank" rel="noopener">View source</a>.
+      </li>
+      <li><strong>Duke University, Deep Tech.</strong> “Data Center Development and Local Governance Guidelines for Community-Centered Outcomes.” Used to support the discussion of local governance, community benefits, water, energy, noise, land use, and public participation.
+        <a href="https://deeptech.duke.edu/project/data-center-development-and-local-governance-guidelines-community-centered-outcomes/" target="_blank" rel="noopener">View source</a>.
+      </li>
+      <li><strong>Association for Progressive Communications (APC).</strong> <em>Just AI, Just Land: Socio-environmental implications of data centers on communities.</em> Used for the relationship between data centers, land use, water access, livelihoods, and community experiences.
+        <a href="https://www.apc.org/en/pubs/just-ai-just-land-socio-environmental-implications-data-centers-communities" target="_blank" rel="noopener">View source</a>.
+      </li>
+      <li><strong>Unsplash.</strong> The hero background image is loaded from Unsplash. Unsplash permits free use under its license; attribution is appreciated. Because the image is loaded remotely through a source URL, verify the exact photographer and image page before formal publication.
+        <a href="https://unsplash.com/license" target="_blank" rel="noopener">Unsplash License</a> ·
+        <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>.
+      </li>
+    </ol>
+    <p class="source-note"><strong>Quote credit:</strong> The statement “AI development should not only be measured by technological progress, but also by how it improves the lives of the people living around it” is an original educational statement written for this website. It is not presented as a quotation from a named person or publication.</p>
+    <p class="source-note"><strong>Image note:</strong> For academic submission, download a specific image from its original page and replace the hero image URL with that file. Then add the photographer’s name, image title or page, and direct image-page link here.</p>
+  </div>
+</section>
+
+<footer>
+  <strong>AI Facilities & Communities</strong><br>
+  Understanding the relationship between artificial intelligence infrastructure and neighboring communities.<br><br>
+  © 2026 Educational Website Project · <a href="#sources">References & Credits</a>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('navLinks').classList.toggle('show');
+}
+document.querySelectorAll('nav a').forEach(link=>{
+  link.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('show'));
+});
+</script>
+</body>
+</html>
