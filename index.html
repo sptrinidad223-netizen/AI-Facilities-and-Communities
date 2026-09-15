@@ -61,6 +61,16 @@ section{padding:85px 7%}
 .quote{background:linear-gradient(120deg,#0b5ed7,#071a35);color:white;text-align:center}
 .quote blockquote{max-width:850px;margin:auto;font-size:clamp(1.4rem,3vw,2.2rem);font-weight:600;line-height:1.35}
 .quote cite{display:block;margin-top:20px;color:#b9eaf0;font-style:normal}
+.research{background:#f4f8fc}
+.research-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.research-box{background:white;padding:30px;border-radius:16px;box-shadow:var(--shadow)}
+.research-box h3{color:var(--navy);margin-top:0}
+.research-box ul{padding-left:20px}
+.evidence{width:100%;border-collapse:collapse;margin-top:20px;background:white;box-shadow:var(--shadow);border-radius:12px;overflow:hidden}
+.evidence th,.evidence td{padding:16px;text-align:left;border-bottom:1px solid #e1e8f0;vertical-align:top}
+.evidence th{background:#dcecf7;color:var(--navy)}
+.evidence td{color:var(--muted)}
+.citation{font-size:.82em;vertical-align:super;color:var(--blue);font-weight:bold}
 .sources{background:#eef4f9}
 .source-list{max-width:950px;margin:auto;background:white;padding:30px 38px;border-radius:16px;box-shadow:var(--shadow)}
 .source-list li{margin-bottom:16px;color:var(--muted)}
@@ -80,7 +90,7 @@ footer a{color:var(--cyan);text-decoration:none}
  nav ul.show{display:flex}
  section{padding:65px 5%}
  .hero{padding:130px 5% 70px}
- .stats,.cards,.challenge-grid,.compare{grid-template-columns:1fr}
+ .stats,.cards,.challenge-grid,.compare,.research-grid{grid-template-columns:1fr}
  h1{font-size:2.7rem}
 }
 </style>
@@ -92,6 +102,7 @@ footer a{color:var(--cyan);text-decoration:none}
   <button class="menu" onclick="toggleMenu()">☰</button>
   <ul id="navLinks">
     <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
     <li><a href="#positive">Benefits</a></li>
     <li><a href="#challenges">Challenges</a></li>
     <li><a href="#solutions">Solutions</a></li>
@@ -120,13 +131,87 @@ footer a{color:var(--cyan);text-decoration:none}
   </div>
 </section>
 
+<section id="research" class="research">
+  <div class="section-title">
+    <h2>Research Question & Information Needed</h2>
+    <p>This project examines how AI facilities influence the communities around them and what can be done to support responsible development.</p>
+  </div>
+  <div class="research-grid">
+    <div class="research-box">
+      <h3>Research Question</h3>
+      <p><strong>How do AI facilities affect neighboring communities economically, socially, environmentally, and in terms of infrastructure, and what strategies can maximize their benefits while minimizing their negative impacts?</strong></p>
+    </div>
+    <div class="research-box">
+      <h3>Information Needed</h3>
+      <ul>
+        <li><strong>Economic:</strong> Employment, investment, and local business opportunities.</li>
+        <li><strong>Environmental:</strong> Energy demand, water use, emissions, and noise.</li>
+        <li><strong>Social:</strong> Community well-being, public participation, and access to opportunities.</li>
+        <li><strong>Infrastructure:</strong> Roads, utilities, telecommunications, and public services.</li>
+        <li><strong>Governance:</strong> Planning, regulations, transparency, and community safeguards.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section-title" style="margin-top:55px;margin-bottom:25px">
+    <h2>Research Method & Source Evaluation</h2>
+    <p>The website uses secondary research and compares information from recognized energy, environmental, academic, and civil-society sources.</p>
+  </div>
+  <div class="research-grid">
+    <div class="research-box">
+      <h3>Research Method</h3>
+      <p>Information was collected from institutional reports, research publications, and credible organizations. Findings were organized into five themes: economic, environmental, social, infrastructure, and governance impacts.</p>
+    </div>
+    <div class="research-box">
+      <h3>Source Selection Criteria</h3>
+      <ul>
+        <li>Credibility of the author or organization</li>
+        <li>Relevance to AI facilities and communities</li>
+        <li>Publication date and currentness</li>
+        <li>Availability of supporting evidence</li>
+        <li>Balance between benefits and risks</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section-title" style="margin-top:55px;margin-bottom:25px">
+    <h2>Evidence at a Glance</h2>
+    <p>The following findings summarize the major issues identified in the reviewed sources.</p>
+  </div>
+  <table class="evidence">
+    <thead>
+      <tr><th>Impact Area</th><th>Research Finding</th><th>Source</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Energy</strong></td>
+        <td>Data centers are becoming a significant source of electricity demand, with AI-related computing contributing to future growth.</td>
+        <td><a href="https://www.iea.org/reports/energy-and-ai" target="_blank" rel="noopener">IEA [1]</a></td>
+      </tr>
+      <tr>
+        <td><strong>Water</strong></td>
+        <td>Cooling systems may create pressure on local water resources, depending on the facility design and location.</td>
+        <td><a href="https://www.wri.org/insights/us-data-center-growth-impacts" target="_blank" rel="noopener">WRI [2]</a></td>
+      </tr>
+      <tr>
+        <td><strong>Community Planning</strong></td>
+        <td>Local governments and communities need clear planning processes that address infrastructure, environmental effects, and public benefits.</td>
+        <td><a href="https://deeptech.duke.edu/project/data-center-development-and-local-governance-guidelines-community-centered-outcomes/" target="_blank" rel="noopener">Duke University [3]</a></td>
+      </tr>
+      <tr>
+        <td><strong>Social and Environmental Impacts</strong></td>
+        <td>Data-center development can affect land use, water access, livelihoods, and community relationships, making participation important.</td>
+        <td><a href="https://www.apc.org/en/pubs/just-ai-just-land-socio-environmental-implications-data-centers-communities" target="_blank" rel="noopener">APC [4]</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
 <section id="positive">
   <div class="section-title">
     <h2>Positive Impacts</h2>
     <p>When planned responsibly, AI facilities can become catalysts for local development and innovation.</p>
   </div>
   <div class="cards">
-    <article class="card"><div class="icon">💼</div><h3>Economic Opportunities</h3><p>AI facilities can attract investment, create direct and indirect employment, and support nearby businesses such as food services, maintenance, logistics, and construction.</p></article>
+    <article class="card"><div class="icon">💼</div><h3>Economic Opportunities</h3><p>AI facilities can attract investment, create direct and indirect employment, and support nearby businesses such as food services, maintenance, logistics, and construction.<sup class="citation">[1]</sup></p></article>
     <article class="card"><div class="icon">🏗️</div><h3>Infrastructure Development</h3><p>Their presence may encourage improvements in roads, utilities, telecommunications, and other public infrastructure.</p></article>
     <article class="card"><div class="icon">🎓</div><h3>Education & Skills</h3><p>Partnerships with schools and universities can provide technical training, internships, research opportunities, and new career pathways.</p></article>
     <article class="card"><div class="icon">🌱</div><h3>Innovation & Growth</h3><p>Technology-oriented development can attract new enterprises and encourage communities to participate in the digital economy.</p></article>
@@ -139,10 +224,10 @@ footer a{color:var(--cyan);text-decoration:none}
     <p>AI infrastructure can also create environmental, social, and operational pressures that need careful management.</p>
   </div>
   <div class="challenge-grid">
-    <article class="challenge"><h3>⚡ Energy Consumption</h3><p>Large computing facilities require substantial electricity, which can increase pressure on local power systems and energy resources.</p></article>
-    <article class="challenge"><h3>💧 Water Usage</h3><p>Some cooling technologies consume water, creating potential competition with residential, agricultural, and ecological needs.</p></article>
-    <article class="challenge"><h3>🔊 Noise & Environment</h3><p>Construction, cooling equipment, generators, and increased vehicle activity may affect nearby residents and ecosystems.</p></article>
-    <article class="challenge"><h3>🏘️ Land Use & Housing</h3><p>Large developments may change land-use patterns, influence property values, and increase pressure on housing and local services.</p></article>
+    <article class="challenge"><h3>⚡ Energy Consumption</h3><p>Large computing facilities require substantial electricity, which can increase pressure on local power systems and energy resources.<sup class="citation">[1]</sup></p></article>
+    <article class="challenge"><h3>💧 Water Usage</h3><p>Some cooling technologies consume water, creating potential competition with residential, agricultural, and ecological needs.<sup class="citation">[2]</sup></p></article>
+    <article class="challenge"><h3>🔊 Noise & Environment</h3><p>Construction, cooling equipment, generators, and increased vehicle activity may affect nearby residents and ecosystems.<sup class="citation">[2]</sup></p></article>
+    <article class="challenge"><h3>🏘️ Land Use & Housing</h3><p>Large developments may change land-use patterns, influence property values, and increase pressure on housing and local services.<sup class="citation">[3][4]</sup></p></article>
   </div>
 </section>
 
@@ -173,7 +258,7 @@ footer a{color:var(--cyan);text-decoration:none}
 
 <section class="quote">
   <blockquote>“AI development should not only be measured by technological progress, but also by how it improves the lives of the people living around it.”</blockquote>
-  <cite>— Community-centered technology principle</cite>
+  <cite>— Original educational statement written for this website</cite>
 </section>
 
 <section id="sources" class="sources">
@@ -183,19 +268,19 @@ footer a{color:var(--cyan);text-decoration:none}
   </div>
   <div class="source-list">
     <ol>
-      <li><strong>International Energy Agency (IEA).</strong> <em>Energy and AI</em> (2025). Used for information about data centers, electricity demand, AI infrastructure, and emissions. 
+      <li><strong>[1] International Energy Agency (IEA).</strong> <em>Energy and AI</em> (2025). Used for information about data centers, electricity demand, AI infrastructure, and emissions. 
         <a href="https://www.iea.org/reports/energy-and-ai" target="_blank" rel="noopener">View source</a>.
       </li>
       <li><strong>International Energy Agency (IEA).</strong> “Energy demand from AI.” Used for the explanation of data center components and projected electricity demand.
         <a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noopener">View source</a>.
       </li>
-      <li><strong>World Resources Institute (WRI).</strong> “From Energy Use to Air Quality, the Many Ways Data Centers Affect US Communities” (2026). Used for discussion of energy, water, air quality, land use, and community impacts.
+      <li><strong>[2] World Resources Institute (WRI).</strong> “From Energy Use to Air Quality, the Many Ways Data Centers Affect US Communities” (2026). Used for discussion of energy, water, air quality, land use, and community impacts.
         <a href="https://www.wri.org/insights/us-data-center-growth-impacts" target="_blank" rel="noopener">View source</a>.
       </li>
-      <li><strong>Duke University, Deep Tech.</strong> “Data Center Development and Local Governance Guidelines for Community-Centered Outcomes.” Used to support the discussion of local governance, community benefits, water, energy, noise, land use, and public participation.
+      <li><strong>[3] Duke University, Deep Tech.</strong> “Data Center Development and Local Governance Guidelines for Community-Centered Outcomes.” Used to support the discussion of local governance, community benefits, water, energy, noise, land use, and public participation.
         <a href="https://deeptech.duke.edu/project/data-center-development-and-local-governance-guidelines-community-centered-outcomes/" target="_blank" rel="noopener">View source</a>.
       </li>
-      <li><strong>Association for Progressive Communications (APC).</strong> <em>Just AI, Just Land: Socio-environmental implications of data centers on communities.</em> Used for the relationship between data centers, land use, water access, livelihoods, and community experiences.
+      <li><strong>[4] Association for Progressive Communications (APC).</strong> <em>Just AI, Just Land: Socio-environmental implications of data centers on communities.</em> Used for the relationship between data centers, land use, water access, livelihoods, and community experiences.
         <a href="https://www.apc.org/en/pubs/just-ai-just-land-socio-environmental-implications-data-centers-communities" target="_blank" rel="noopener">View source</a>.
       </li>
       <li><strong>Unsplash.</strong> The hero background image is loaded from Unsplash. Unsplash permits free use under its license; attribution is appreciated. Because the image is loaded remotely through a source URL, verify the exact photographer and image page before formal publication.
