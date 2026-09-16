@@ -71,6 +71,24 @@ section{padding:85px 7%}
 .evidence th{background:#dcecf7;color:var(--navy)}
 .evidence td{color:var(--muted)}
 .citation{font-size:.82em;vertical-align:super;color:var(--blue);font-weight:bold}
+
+.framework{background:#fff}
+.framework-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.framework-card{border-radius:16px;padding:22px;box-shadow:var(--shadow);border-top:5px solid var(--cyan);background:#f8fbfe}
+.framework-card h3{color:var(--navy);margin:10px 0 8px}
+.framework-card p,.framework-card li{color:var(--muted);font-size:.94rem}
+.framework-card ul{padding-left:18px}
+.mini-graphic{height:125px;border-radius:12px;background:linear-gradient(135deg,#dff7fb,#eaf0ff);display:grid;place-items:center;margin-bottom:15px}
+.mini-graphic svg{width:90%;height:105px}
+.video-section{background:#eef4f9}
+.video-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
+.video-frame{background:#071a35;padding:12px;border-radius:16px;box-shadow:var(--shadow)}
+.video-frame iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
+.video-note{background:white;border-radius:16px;padding:28px;box-shadow:var(--shadow)}
+.video-note h3{color:var(--navy);margin-top:0}
+.video-note a{color:var(--blue);font-weight:bold}
+@media(max-width:900px){.framework-grid{grid-template-columns:repeat(2,1fr)}.video-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.framework-grid{grid-template-columns:1fr}}
 .sources{background:#eef4f9}
 .source-list{max-width:950px;margin:auto;background:white;padding:30px 38px;border-radius:16px;box-shadow:var(--shadow)}
 .source-list li{margin-bottom:16px;color:var(--muted)}
@@ -103,6 +121,8 @@ footer a{color:var(--cyan);text-decoration:none}
   <ul id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#research">Research</a></li>
+    <li><a href="#framework">Analysis</a></li>
+    <li><a href="#video">Video</a></li>
     <li><a href="#positive">Benefits</a></li>
     <li><a href="#challenges">Challenges</a></li>
     <li><a href="#solutions">Solutions</a></li>
@@ -205,6 +225,47 @@ footer a{color:var(--cyan);text-decoration:none}
   </table>
 </section>
 
+<section id="framework" class="framework">
+  <div class="section-title">
+    <h2>Community Impact Framework</h2>
+    <p>The analysis is organized into four connected components: current status, stressors, effects, and responses.</p>
+  </div>
+  <div class="framework-grid">
+    <article class="framework-card">
+      <div class="mini-graphic"><svg viewBox="0 0 220 110" role="img" aria-label="Current status infographic"><rect x="20" y="55" width="35" height="35" rx="4" fill="#0b5ed7"/><rect x="70" y="35" width="35" height="55" rx="4" fill="#18c7d9"/><rect x="120" y="18" width="35" height="72" rx="4" fill="#071a35"/><path d="M15 94H195" stroke="#071a35" stroke-width="3"/><path d="M160 25l18-12 20 8" fill="none" stroke="#18c7d9" stroke-width="4"/></svg></div>
+      <h3>1. Current Status</h3>
+      <p>AI facilities and data centers are expanding to support cloud computing, advanced analytics, and AI services. Their growth increases demand for electricity, cooling, land, and digital infrastructure.</p>
+      <ul><li>Growing investment and construction</li><li>Increasing power and water demand</li><li>More attention from local communities</li></ul>
+    </article>
+    <article class="framework-card">
+      <div class="mini-graphic"><svg viewBox="0 0 220 110" role="img" aria-label="Stressors infographic"><path d="M110 12L205 92H15Z" fill="#ffd8d8" stroke="#d9534f" stroke-width="4"/><path d="M110 38v27M110 76v3" stroke="#d9534f" stroke-width="8" stroke-linecap="round"/></svg></div>
+      <h3>2. Stressors</h3>
+      <p>Stressors are the pressures that facilities may place on neighboring communities and local systems.</p>
+      <ul><li>High energy consumption</li><li>Water use for cooling</li><li>Noise, traffic, and construction</li><li>Land-use and housing pressure</li><li>Community concerns about transparency</li></ul>
+    </article>
+    <article class="framework-card">
+      <div class="mini-graphic"><svg viewBox="0 0 220 110" role="img" aria-label="Effects infographic"><path d="M110 55L45 20M110 55L175 20M110 55L45 90M110 55L175 90" stroke="#0b5ed7" stroke-width="3"/><circle cx="110" cy="55" r="25" fill="#18c7d9"/><circle cx="45" cy="20" r="15" fill="#0b5ed7"/><circle cx="175" cy="20" r="15" fill="#0b5ed7"/><circle cx="45" cy="90" r="15" fill="#0b5ed7"/><circle cx="175" cy="90" r="15" fill="#0b5ed7"/></svg></div>
+      <h3>3. Effects</h3>
+      <p>The same development can create benefits and burdens, depending on planning, location, scale, and community safeguards.</p>
+      <ul><li>Jobs, investment, and business activity</li><li>Improved digital infrastructure</li><li>Pressure on utilities and ecosystems</li><li>Changes in quality of life and public perception</li></ul>
+    </article>
+    <article class="framework-card">
+      <div class="mini-graphic"><svg viewBox="0 0 220 110" role="img" aria-label="Responses infographic"><path d="M110 88C65 65 45 45 45 28c0-14 17-21 29-10 12-11 29-4 29 10 0-14 17-21 29-10 12-11 29-4 29 10 0 17-20 37-51 60z" fill="#18a878" opacity=".9"/><path d="M110 88V32M110 55L80 40M110 55l30-15" stroke="white" stroke-width="4" fill="none"/></svg></div>
+      <h3>4. Responses</h3>
+      <p>Responses should reduce avoidable harms while ensuring that local communities share in the benefits.</p>
+      <ul><li>Renewable energy and efficient cooling</li><li>Water conservation and disclosure</li><li>Community consultation and benefit agreements</li><li>Clear regulations and monitoring</li><li>Sustainable site and infrastructure planning</li></ul>
+    </article>
+  </div>
+</section>
+
+<section id="video" class="video-section">
+  <div class="section-title"><h2>Information Video</h2><p>Watch a short explainer about the water demands of AI and data centers.</p></div>
+  <div class="video-grid">
+    <div class="video-frame"><iframe src="https://www.youtube.com/embed/KjO8LS187Ho" title="Why AI Uses So Much Water - The Hidden Cost of Data Centers" allowfullscreen></iframe></div>
+    <div class="video-note"><h3>Why this video matters</h3><p>The video explains how data-center cooling works and why water demand is an important community and environmental consideration. It supports the <strong>Stressors</strong> and <strong>Effects</strong> sections of this website.</p><p><strong>Video credit:</strong> <a href="https://www.youtube.com/watch?v=KjO8LS187Ho" target="_blank" rel="noopener">The Data Girl, “Why AI Uses So Much Water | The Hidden Cost of Data Centers”</a>.</p><p class="source-note">The video is embedded for educational purposes. All rights remain with the original creator.</p></div>
+  </div>
+</section>
+
 <section id="positive">
   <div class="section-title">
     <h2>Positive Impacts</h2>
@@ -263,7 +324,7 @@ footer a{color:var(--cyan);text-decoration:none}
 
 <section id="sources" class="sources">
   <div class="section-title">
-    <h2>References & Source Credits</h2>
+    <h2>References, Image & Video Credits</h2>
     <p>This website uses the following references for factual claims, recommendations, image use, and quotations. Access dates should be updated if the website is submitted at a later date.</p>
   </div>
   <div class="source-list">
